@@ -1,9 +1,9 @@
-from time import sleep
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import json
 from main import get_all_tariffs_json
+# -*- coding: utf-8 -*-
 
 app = Flask(__name__)
 CORS(app)
@@ -27,7 +27,6 @@ cursor.execute('''
     )''')
 conn.close()
 
-# Функцию отвечает за добавление данных в таблицу
 def get_tariffs_data():
     with open('tariffs.json', 'r', encoding='utf-8') as file:
         tariffs = json.load(file)
@@ -141,4 +140,4 @@ def get_tariffs():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
