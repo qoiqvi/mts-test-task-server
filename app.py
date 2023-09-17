@@ -74,7 +74,6 @@ def refetch_tarrifs_data():
         conn.execute('DELETE FROM tariffs;')
         conn.commit()
         get_all_tariffs_json()
-        sleep(5)
         get_tariffs_data()
         conn.commit()
         return 'Data refetched', 200

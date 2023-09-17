@@ -51,7 +51,6 @@ def get_all_tariffs_json():
                 # "isDetailsButtonHidden": tariff_data.get('isActionButtonHidden'),
             }
             tariffs_list.append(new_tariff)
-        sleep(3)
         with open("tariffs.json", 'w', encoding="utf-8") as file:
             json.dump(tariffs_list, file, indent=4, ensure_ascii=False)
 
